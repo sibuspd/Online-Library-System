@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient
+    (to bottom , #f1e1e1, #B4B5B8, #C0C0C3, #CBCCCD, #D7D7D8, #E3E3E3);
+}
+
+.book-card{
+    width: 350px;
+    background-color: #f1e1e1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+    align-items: center;
+    padding: 5px 5px 8px 5px ;
+    transition: transform 0.8s;
+    overflow: hidden;
+}
+
+.book-card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.book-title{
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+.book-author{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.book-description{
+    font-size: 1.1em;
+}
+
+.book-cover{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.book-details{
+    padding: 15px;
+}
+
+.bookList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.search-input{
+    width: 400px;
+    margin: 20px;
+    height: 40px;
+    background-color: antiquewhite;
+    font-size: larger;
+}
+
+.search-button{
+    padding: 9px;
+    width: 100px;
+    font-size: medium;
+    border-radius: 8px;
+}
+
+.search-button:hover{
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.searchBarPlusButton{
+    display: flex;
+    align-items: center;
+}
+
+#Heading{
+    text-align: center;
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
