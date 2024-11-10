@@ -1,0 +1,19 @@
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.header{
+    background-color: salmon;
+    padding: 12px;
+    display: flex;
+    justify-content: center;    
+}
+
+li{
+    list-style-type: none;
+    margin: 10px;
+    font-size: 1.6rem;
+}
