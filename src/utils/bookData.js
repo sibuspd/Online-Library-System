@@ -94,5 +94,50 @@ export const Books = [
         description:"Get the most out of this foundational reference and improve the productivity of your software teams. This open access book collects the wisdom of the 2017 \"Dagstuhl\" seminar on productivity in software engineering, a meeting of community leaders, who came together with the goal of rethinking traditional definitions and measures of productivity.",
         website:"https://doi.org/10.1007/978-1-4842-4221-6",
         image:"https://www.dbooks.org/img/books/1484242211.jpg"
+    },
+    { 
+        isbn: "9780262043793",
+        title: "Introduction to Machine Learning",
+        subtitle: "A Probabilistic Perspective",
+        author: "Kevin P. Murphy",
+        publishedDate: "2012-06-15T00:00:00.000Z",
+        publisher: "MIT Press", pages: 740,
+        description: "This book provides a comprehensive introduction to the field of machine learning, covering both the theory and practice of the most important algorithms.",
+        website: "https://mitpress.mit.edu/books/introduction-machine-learning",
+        image: "https://product.hstatic.net/200000211451/product/cover1_0a64dc26d4dd424b8a91d645c7971e7e_master.jpeg"
+    },
+    { 
+        isbn: "9780262035613",
+        title: "Deep Learning",
+        subtitle: "A Practitioner's Approach",
+        author: "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+        publishedDate: "2016-11-18T00:00:00.000Z", publisher: "MIT Press",
+        pages: 775,
+        description: "Deep Learning is a comprehensive guide to the field, covering both the theory and practice of deep learning algorithms.",
+        website: "https://mitpress.mit.edu/books/deep-learning",
+        image: "https://th.bing.com/th/id/OIP.WCYIvVKFCECYZt_ubqvX-wHaJv?rs=1&pid=ImgDetMain"
+    },
+    { 
+        isbn: "9780262510875",
+        title: "Structure and Interpretation of Computer Programs",
+        subtitle: "Building on the Legacy of SICP",
+        author: "Harold Abelson, Gerald Jay Sussman, Julie Sussman",
+        publishedDate: "2022-04-12T00:00:00.000Z",
+        publisher: "MIT Press",
+        pages: 600,
+        description: "This book provides a deep understanding of the principles of computer programming, using Scheme as the language of instruction.",
+        website: "https://mitpress.mit.edu/books/structure-interpretation-computer-programs",
+        image: "https://th.bing.com/th/id/OIP._6TYAd1q3_2Ewrd3oIfuugHaKr?w=1200&h=1730&rs=1&pid=ImgDetMain"
+    },
+    { 
+        isbn: "9780262033848",
+        title: "Introduction to Algorithms",
+        subtitle: "Third Edition",
+        author: "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein", publishedDate: "2022-04-05T00:00:00.000Z",
+        publisher: "MIT Press",
+        pages: 1000,
+        description: "This book provides a comprehensive introduction to the field of algorithms, covering both the theory and practice of the most important algorithms.",
+        website: "https://mitpress.mit.edu/books/introduction-algorithms",
+        image: "https://th.bing.com/th/id/OIP.3YBaTEDl9yVQt3-ZSPZ-7gAAAA?rs=1&pid=ImgDetMain"
     }
 ]

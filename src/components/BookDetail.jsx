@@ -7,6 +7,9 @@ function BookDetail(){
     
     const currentBookArray = Books.filter(book => book.isbn === paramObject.isbn);
     console.log(currentBookArray); // Array of filtered books that obviously has 1 book object.
+
+    if(currentBookArray.length === 0)
+        return <h1>No such book ISBN exist in the repository.</h1>
     return(
         <>
             {currentBookArray.map(bookObject => {
