@@ -3,6 +3,7 @@ import Book from "./Book"
 import "./style.css"
 import {Books} from "../utils/bookData"
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 function BookList(){
 
@@ -31,7 +32,10 @@ function BookList(){
         </div>
 
         <div className="bookList">
-        {filteredBooks.map(book => <Book key={book.isbn} bookDetails={book}/>)}
+        {filteredBooks.map(book =>
+        <Link to={`/book-isbn/${book.isbn}`} key={book.isbn}>
+          <Book bookDetails={book}/>
+        </Link>)}
         </div>
         </div>
     )
@@ -39,4 +43,17 @@ function BookList(){
 
 export default BookList
 
-BookList.propTypes = { data: PropTypes.arrayOf( PropTypes.shape({ id: PropTypes.number, title: PropTypes.string, author: PropTypes.string, publishedDate: PropTypes.string, coverImage: PropTypes.string, description: PropTypes.string }) ) };
+BookList.propTypes = { 
+  data: PropTypes.arrayOf( 
+    PropTypes.shape(
+      { 
+        id: PropTypes.number,
+        title: PropTypes.string,
+        author: PropTypes.string,
+        publishedDate: PropTypes.string,
+        coverImage: PropTypes.string,
+        description: PropTypes.string
+      }
+    )
+  )
+};

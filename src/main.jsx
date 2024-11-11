@@ -6,6 +6,7 @@ import Contact from "./components/Contact.jsx"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error.jsx"
 import BookList from './components/BookList.jsx'
+import BookDetail from './components/BookDetail.jsx'
 
 
 // Creating Router Configuration
@@ -26,6 +27,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>,
+      },
+      {
+        path: "/book-isbn/:isbn",
+        element: <BookDetail/>
       }
     ] 
   }
