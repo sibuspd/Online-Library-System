@@ -7,6 +7,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error.jsx"
 import BookList from './components/BookList.jsx'
 import BookDetail from './components/BookDetail.jsx'
+import BookListII from './components/BookListII.jsx'
 
 
 // Creating Router Configuration
@@ -31,9 +32,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/book-isbn/:isbn",
         element: <BookDetail/>
+      },
+      {
+        path: "/2nd_bookList",
+        element: <BookListII/>
       }
     ] 
-  }
+  } 
 ]);
 
 createRoot(document.getElementById('root')).render(

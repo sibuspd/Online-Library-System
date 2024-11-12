@@ -7,13 +7,11 @@ import { Link } from "react-router-dom";
 
 function BookList(){
 
-    // <BookList data={filteredBooks}/>
-
     const [searchText, setSearchText] = useState("");
     const [filteredBooks, setFilteredBooks] = useState(Books);
+
   
     function handleSearch(){
-    
      const shortlistedBooks = 
      Books.filter(book => book.title.toLowerCase().includes(searchText.toLowerCase()));
      console.log(shortlistedBooks);
