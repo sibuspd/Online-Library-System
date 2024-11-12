@@ -9,7 +9,12 @@ function BookListII(){
 
 
     function handleSearch(){
-            //TBD
+            const fetchedBooks = [...filteredBooks];
+            
+            const shortlistedBooks = fetchedBooks.filter(book =>
+                book.title.toLowerCase().includes(searchText.toLowerCase()));
+            
+            setFilteredBooks(shortlistedBooks);
     }
     
 
@@ -20,7 +25,6 @@ function BookListII(){
     async function fetchData(){
       const response = await fetch("https://www.dbooks.org/api/recent"); //Fetch returns a promise
       const jsonData = await response.json();
-      console.log(jsonData.books);
 
       setFilteredBooks(jsonData.books);
     }
@@ -39,7 +43,7 @@ function BookListII(){
 
         <div className="bookList">
         {filteredBooks.map(book =>
-        <Link to={`/book-isbn/${book.isbn}`} key={book.isbn}>
+        <Link to={`/book-id/${book.id}`} key={book.id}>
           <Book bookDetails={book}/>
         </Link>)}
         </div>

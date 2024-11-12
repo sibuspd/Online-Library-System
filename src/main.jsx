@@ -36,7 +36,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/2nd_bookList",
         element: <BookListII/>
-      }
+      },
     ] 
   } 
 ]);
