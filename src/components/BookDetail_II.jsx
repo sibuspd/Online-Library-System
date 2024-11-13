@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./style.css"
 
 function BookDetail_II(){
     
@@ -24,10 +25,16 @@ function BookDetail_II(){
            {fetchedBook.map(bookObject => {
                 return(
                     <>
-                        <h1>{bookObject.title}</h1>
-                        <h2>{bookObject.subtitle}</h2>
-                        <img src={bookObject.image} width="200px" height="200px" />
-                        <h3>{bookObject.authors}</h3>
+                        <div className="individual-book">
+                            <div className="book-image">
+                            <img src={bookObject.image} width="200px" height="200px" />
+                            </div>
+                            <div className="book-profile">
+                                <h1>{bookObject.title}</h1>
+                                <h2>{bookObject.subtitle}</h2>
+                                <h3>{bookObject.authors}</h3>
+                            </div>
+                        </div>
                     </>
                 )
            })} 

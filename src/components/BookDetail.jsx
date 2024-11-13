@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom"
 import { Books } from "../utils/bookData";
+import "./style.css"
 
 function BookDetail(){
  
@@ -15,12 +16,18 @@ function BookDetail(){
             {currentBookArray.map(bookObject => {
                 return(
                     <>
-                        <h1>{bookObject.title}</h1>
-                        <h2>{bookObject.subtitle}</h2>
+                        <div className="individual-book">
+                            <div className="book-image">
                         <img src={bookObject.image} width="200px" height="200px" />
-                        <h4>{bookObject.publishedDate}</h4>
-                        <h3>{bookObject.publisher}</h3>
-                        <p>{bookObject.description}</p>
+                            </div>
+                            <div className="book-profile">
+                                <h1>{bookObject.title}</h1>
+                                <h2>{bookObject.subtitle}</h2>
+                                <h4>{bookObject.publishedDate}</h4>
+                                <h3>{bookObject.publisher}</h3>
+                                <p className="book-text">{bookObject.description}</p>
+                            </div>
+                        </div>  
                     </>
                 )
             }
