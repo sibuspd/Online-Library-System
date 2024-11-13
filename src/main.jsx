@@ -6,9 +6,9 @@ import Contact from "./components/Contact.jsx"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error.jsx"
 import BookList from './components/BookList.jsx'
-import BookDetail from './components/BookDetail.jsx'
 import BookListII from './components/BookListII.jsx'
-
+import BookDetail from './components/BookDetail.jsx'
+import BookDetail_II from './components/BookDetail_II.jsx'
 
 // Creating Router Configuration
 const appRouter = createBrowserRouter([
@@ -20,6 +20,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <BookList/>,
+      },      
+      {
+        path: "/2nd_bookList",
+        element: <BookListII/>
       },
       {
         path: "/about",
@@ -34,9 +38,9 @@ const appRouter = createBrowserRouter([
         element: <BookDetail/>
       },
       {
-        path: "/2nd_bookList",
-        element: <BookListII/>
-      },
+        path: "/book-id/:id",
+        element: <BookDetail_II/>
+      }
     ] 
   } 
 ]);

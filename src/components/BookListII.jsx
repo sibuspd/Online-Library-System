@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Book from "./Book";
+import BookII from "./BookII";
 import { Link } from "react-router-dom";
 
 function BookListII(){
@@ -44,7 +44,7 @@ function BookListII(){
         <div className="bookList">
         {filteredBooks.map(book =>
         <Link to={`/book-id/${book.id}`} key={book.id}>
-          <Book bookDetails={book}/>
+          <BookII bookDetails={book}/>
         </Link>)}
         </div>
         </div>
