@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useState } from "react"
 
-function useFetch(url){
+function useFetch(url){ // URL passed from the calling component outside it
 
     const [data,setData] = useState(null); // initially no data
     const [error, setError] = useState(null) // initially no error because of no fetching
@@ -35,7 +35,7 @@ function useFetch(url){
     }, [url]); //  fetchData() only runs next time when URl changes
     
 
-    return {data, loading, error}; // Return Loading status and error as well.
+    return {data, loading, error}; // Returns an object having Loading status and Error as well.
 }
 
 export default useFetch
