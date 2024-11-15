@@ -12,7 +12,7 @@ function App() {
         <h1 id="Heading">Welcome to Book Management Application</h1>
         <Header/>
         <Outlet/>
-        <Footer/> 
+        <Footer/>
     </>
   )
 }

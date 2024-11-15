@@ -21,6 +21,7 @@ body{
     padding: 5px 5px 8px 5px ;
     transition: transform 0.8s;
     overflow: hidden;
+    height: 600px;
 }
 
 .book-card:hover{

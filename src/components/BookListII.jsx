@@ -20,7 +20,9 @@ function BookListII(){
 
     useEffect(()=>{
         fetchData();
+        console.log("useEffect called");
     },[]);
+     // blank array prevents the  call of useEffect() more than once after 1st rendition of component
     
     async function fetchData(){
       const response = await fetch("https://www.dbooks.org/api/recent"); //Fetch returns a promise
