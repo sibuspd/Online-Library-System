@@ -8,9 +8,14 @@ const cartSlice = createSlice({
     reducers:{
         addItem: ( state, action ) => {
             state.items.push(action.payload); // Pushes data into items array
+            console.log(state.items);
         },
-        removeItem: ( state ) => {
-            state.items.pop(); // Removes the recent addition
+        removeItem: ( state, action ) => {
+            let index = state.items.findIndex(item => item.isbn === action.payload.isbn);
+            console.log(index);      
+            if(index !=-1)
+            state.items.splice(index, 1); // Removes the item from the array
+            else console.log("This item is not added to the Reading List");
         },
         clearCart: ( state ) => {
             state.items.length = 0; // Empties the items array

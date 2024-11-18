@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom"
 import { Books } from "../utils/bookData";
 import "./style.css"
 import { useDispatch } from "react-redux";
-import { addItem} from "../utils/cartSlice"
+import { addItem, removeItem} from "../utils/cartSlice"
 
 function BookDetail(){
  
@@ -15,6 +15,10 @@ function BookDetail(){
     
     function handleAddBook(item){
         dispatch(addItem(item));
+    }
+
+    function handleRemoveBook(item){
+        dispatch(removeItem(item));
     }
 
     if(currentBookArray.length === 0)
@@ -35,8 +39,8 @@ function BookDetail(){
                                 <h3>{bookObject.publisher}</h3>
                                 <p className="book-text">{bookObject.description}</p>
                                 <div className="cartButtons-container"> 
-                                <button className="addCartButton" onClick={() => handleAddBook(bookObject)}>Add to Cart </button>
-                                <button className="deleteCartButton">Remove the Item </button>
+                                <button className="addCartButton" onClick={() => handleAddBook(bookObject)}>Add to Reading List </button>
+                                <button className="deleteCartButton" onClick={() => handleRemoveBook(bookObject)}>Remove the Book </button>
                                 </div>
                             </div>
                         </div>  
