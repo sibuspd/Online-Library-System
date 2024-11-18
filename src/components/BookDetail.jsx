@@ -1,6 +1,8 @@
 import {useParams} from "react-router-dom"
 import { Books } from "../utils/bookData";
 import "./style.css"
+import { useDispatch } from "react-redux";
+import { addItem} from "../utils/cartSlice"
 
 function BookDetail(){
  
@@ -8,6 +10,12 @@ function BookDetail(){
     
     const currentBookArray = Books.filter(book => book.isbn === paramObject.isbn);
     console.log(currentBookArray); // Array of filtered books that obviously has 1 book object.
+
+    const dispatch = useDispatch();
+    
+    function handleAddBook(item){
+        dispatch(addItem(item));
+    }
 
     if(currentBookArray.length === 0)
         return <h1>No such book ISBN exist in the repository.</h1>
@@ -26,6 +34,10 @@ function BookDetail(){
                                 <h4>{bookObject.publishedDate}</h4>
                                 <h3>{bookObject.publisher}</h3>
                                 <p className="book-text">{bookObject.description}</p>
+                                <div className="cartButtons-container"> 
+                                <button className="addCartButton" onClick={() => handleAddBook(bookObject)}>Add to Cart </button>
+                                <button className="deleteCartButton">Remove the Item </button>
+                                </div>
                             </div>
                         </div>  
                     </>

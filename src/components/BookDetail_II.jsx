@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./style.css"
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 function BookDetail_II(){
     
@@ -18,6 +20,12 @@ function BookDetail_II(){
         setFetchedBook(selectedBook);
     }
 
+    const dispatch = useDispatch();
+
+    function handleAdd(item){
+        dispatch(addItem(item));
+    }
+
     if(fetchedBook.length === 0) // fetchedBook is also an array with only 1 book object
         return <h1>Please wait while the book loads</h1>
     return(
@@ -33,6 +41,10 @@ function BookDetail_II(){
                                 <h1>{bookObject.title}</h1>
                                 <h2>{bookObject.subtitle}</h2>
                                 <h3>{bookObject.authors}</h3>
+                                <div className="cartButtons-container"> 
+                                <button className="addCartButton" onClick={()=>handleAdd(bookObject)}>Add to Cart </button>
+                                <button className="deleteCartButton">Remove the Item </button>
+                                </div>
                             </div>
                         </div>
                     </>

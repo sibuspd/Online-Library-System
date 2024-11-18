@@ -8,8 +8,11 @@ ul{
 .header{
     background-color: salmon;
     padding: 12px;
+    height: 60px;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px 2px gray;    
 }
 
 li{
@@ -32,11 +35,52 @@ li{
     width: 70%;
     background-color: lightcoral;
     color: white;
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
+    text-align: center;    
 }
 
 #username-box::placeholder{
     text-align: center;
     font-size: 1rem;
     color: white;
+}
+
+#cartSlice{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 20%;
+}
+
+#cartCount{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(118, 21, 21);
+    cursor: pointer;
+}
+
+.cartButtons-container{
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items:baseline;
+}
+
+.cartButtons-container button{
+    padding: 12px;
+    border-radius: 9px;
+    background-color: rgba(172, 255, 47, 0.386);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.addCartButton:hover{
+    background-color: green;
+    color: whitesmoke;
+}
+
+.deleteCartButton:hover{
+    background-color: rgba(255, 0, 0, 0.683);
+    color: whitesmoke;
 }

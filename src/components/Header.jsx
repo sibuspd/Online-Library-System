@@ -3,12 +3,21 @@ import {Link} from "react-router-dom"
 import { useContext } from "react"
 import userContext from "../utils/userContext" 
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
 
 function Header(){
 
-    let {setUserName, username, loginStatus} = useContext(userContext);
+    const cartItems = useSelector( (store) => store.cart.items);
+    console.log(cartItems);
+
+    let {setUserName, username} = useContext(userContext);
     const [online, setOnline] = useState(false);
+    
+    const [toggleDisplay, setToggleDisplay] = useState(false);
+    function handleCartClick(){
+        setToggleDisplay(!toggleDisplay);
+    }
     return(
         <div className="header">
             <div id="username-box-container"> 
@@ -24,7 +33,11 @@ function Header(){
                     <span>{online?"🟢":"🔴"}</span>
                 </li>
             </ul>
+            <div id="cartSlice">
+                <li> My Booklist 📚 <span id="cartCount" onClick={handleCartClick}>{ cartItems.length }</span></li>
+            </div>
         </div>
+        
     )
 }
  
