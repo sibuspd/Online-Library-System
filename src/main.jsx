@@ -9,6 +9,7 @@ import BookList from './components/BookList.jsx'
 import BookListII from './components/BookListII.jsx'
 import BookDetail from './components/BookDetail.jsx'
 import BookDetail_II from './components/BookDetail_II.jsx'
+import ReadingList from './components/ReadingList.jsx'
 
 // Creating Router Configuration
 const appRouter = createBrowserRouter([
@@ -40,6 +41,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/book-id/:id",
         element: <BookDetail_II/>
+      },
+      {
+        path: "/reading-list",
+        element: <ReadingList/>
       }
     ] 
   } 

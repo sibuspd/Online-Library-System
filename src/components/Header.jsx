@@ -34,7 +34,7 @@ function Header(){
                 </li>
             </ul>
             <div id="cartSlice">
-                <li> My Booklist 📚 <span id="cartCount" onClick={handleCartClick}>{ cartItems.length }</span></li>
+                <Link to="/reading-list"><li id="reading-list"> My Readinglist 📚 <span id="cartCount" onClick={handleCartClick}>{ cartItems.length }</span></li></Link>
             </div>
         </div>
         
