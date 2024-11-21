@@ -1,8 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import About from './components/About.jsx'
-import Contact from "./components/Contact.jsx"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error.jsx"
 import BookList from './components/BookList.jsx'
@@ -10,6 +8,12 @@ import BookListII from './components/BookListII.jsx'
 import BookDetail from './components/BookDetail.jsx'
 import BookDetail_II from './components/BookDetail_II.jsx'
 import ReadingList from './components/ReadingList.jsx'
+import { lazy, Suspense } from "react"
+
+const About = lazy(()=>import ("./components/About.jsx"));
+const Contact = lazy(()=>import ("./components/Contact.jsx"));
+
+
 
 // Creating Router Configuration
 const appRouter = createBrowserRouter([
@@ -28,11 +32,15 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About/>,
+        element: <Suspense fallback={<h1>Loading 🔄..........Please wait</h1>}>
+                  <About/>
+                </Suspense>,
       },
       {
         path: "/contact",
-        element: <Contact/>,
+        element: <Suspense fallback={<h1>Loading 🔄..........Please wait</h1>}>
+                  <Contact/>
+                  </Suspense>,
       },
       {
         path: "/book-isbn/:isbn",
