@@ -4,7 +4,7 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error.jsx"
 import BookList from './components/BookList.jsx'
-import BookListII from './components/BookListII.jsx'
+// import BookListII from './components/BookListII.jsx'
 import BookDetail from './components/BookDetail.jsx'
 import BookDetail_II from './components/BookDetail_II.jsx'
 import ReadingList from './components/ReadingList.jsx'
@@ -12,6 +12,7 @@ import { lazy, Suspense } from "react"
 
 const About = lazy(()=>import ("./components/About.jsx"));
 const Contact = lazy(()=>import ("./components/Contact.jsx"));
+const BookListII = lazy(()=>import ("./components/BookListII.jsx"));
 
 
 
@@ -28,7 +29,9 @@ const appRouter = createBrowserRouter([
       },      
       {
         path: "/2nd_bookList",
-        element: <BookListII/>
+        element: <Suspense fallback={<h1>Fetching data 🔄..........Please wait</h1>}>
+                    <BookListII/>
+                  </Suspense>
       },
       {
         path: "/about",

@@ -13,7 +13,7 @@ function App() {
   return (
     <> 
         <Provider store={appStore}>
-          <h1 id="Heading">Welcome to Book Management Application</h1>
+          <h1 id="Heading">Welcome to Online Library System</h1>
           <userContext.Provider value = {{ username: userName, loginStatus: false, setUserName}}>
             <Header/>
           </userContext.Provider>

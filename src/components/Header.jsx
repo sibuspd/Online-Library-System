@@ -25,7 +25,7 @@ function Header(){
             onChange={(e)=>{setUserName(e.target.value); setOnline(true);}}/>
             </div>
             <ul>
-                <Link to="/2nd_bookList"><li>Other Books</li></Link>
+                <Link to="/2nd_bookList"><li>Other Popular Books</li></Link>
                 <Link to="/"><li>Home</li></Link>
                 <Link to="/about"><li>About</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>

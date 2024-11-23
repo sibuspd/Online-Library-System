@@ -35,7 +35,7 @@ function BookListII(){
         <>
         <div>
         <div className="search">
-          <h2>Search for Books</h2>
+          <h2>Browse books below</h2>
           <div className="searchBarPlusButton">
             <input type="text" name="" id="" className="search-input" 
             onChange={(e)=>{setSearchText(e.target.value)}}/>
