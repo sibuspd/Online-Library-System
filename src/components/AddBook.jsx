@@ -1,8 +1,11 @@
 import "./AddBook.css"
-import { useState } from "react";
-import {Books} from "../utils/bookData"
+import { useState } from "react"
+import { add } from "../utils/bookSlice"
+import { useDispatch } from "react-redux"
 
 function AddBook(){
+    
+    const dispatch = useDispatch();
     
     const [formData, setFormData] = useState({
         isbn: '',
@@ -19,8 +22,8 @@ function AddBook(){
 
     function handleSubmit(e){
         e.preventDefault();
-        Books.push(formData); // Pushes the new book object to existing array under Utils
-        console.log(Books); // Updates are made in runtime memory only.
+        dispatch(add(formData)); // Dispatches action "add" to add a new book to appStore
+        console.log("Book Added", formData);
         setFormData({ isbn: '', title: '', subtitle: '', author: '', publishedDate: '', publisher: '', pages: '', description: '', website: '', image: '' }); // Reset form input boxes
         alert("Book added successfuly");
     }
@@ -40,23 +43,23 @@ function AddBook(){
                 </label>
 
                 <label htmlFor="title" className="form-label">Title :
-                    <input type="text" name="title" placeholder="Type only numbers" value={formData.title} onChange={handleChange} required/>
+                    <input type="text" name="title" placeholder="Enter the Book's Name" value={formData.title} onChange={handleChange} required/>
                 </label>
 
                 <label htmlFor="subtitle" className="form-label">Subtitle :
-                    <input type="text" name="subtitle" placeholder="Type only numbers" value={formData.subtitle} onChange={handleChange}/>
+                    <input type="text" name="subtitle" placeholder="Enter sub-title of Book" value={formData.subtitle} onChange={handleChange}/>
                 </label>
 
                 <label htmlFor="author" className="form-label">Author :
-                    <input type="text" name="author" placeholder="Type only numbers" value={formData.author} onChange={handleChange} required/>
+                    <input type="text" name="author" placeholder="Author's fullname" value={formData.author} onChange={handleChange} required/>
                 </label>
 
                 <label htmlFor="publishedDate" className="form-label">Date of Publication :
-                    <input type="text" name="publishedDate" placeholder="Type only numbers" value={formData.publishedDate} onChange={handleChange}/>
+                    <input type="text" name="publishedDate" placeholder="YYYY-MM-DD" value={formData.publishedDate} onChange={handleChange}/>
                 </label>
 
                 <label htmlFor="published" className="form-label">Publisher's Name :
-                    <input type="text" name="publisher" placeholder="YYYY-MM-DD" value={formData.publisher} onChange={handleChange} required/>
+                    <input type="text" name="publisher" placeholder="Publisher's name" value={formData.publisher} onChange={handleChange} required/>
                 </label>
 
                 <label htmlFor="pages" className="form-label">Total Pages :
