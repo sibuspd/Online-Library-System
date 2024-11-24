@@ -20,21 +20,27 @@ function BookList(){
 
     return(
         <div>
-        <div className="search">
-          <h2>Browse books below</h2>
-          <div className="searchBarPlusButton">
-            <input type="text" name="" id="" className="search-input" 
-            onChange={(e)=>{setSearchText(e.target.value)}}/>
-            <button onClick={handleSearch} className="search-button">Search</button>
+          <div className="search-panel">
+            <div id="add-book-container">
+              <Link to="/add-book"><button id="add-book-button">Add a Book</button></Link>
+            </div>
+            
+            <div className="search">
+              <h2>Browse books below</h2>
+              <div className="searchBarPlusButton">
+                <input type="text" name="" id="" className="search-input" 
+                onChange={(e)=>{setSearchText(e.target.value)}}/>
+                <button onClick={handleSearch} className="search-button">Search</button>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="bookList">
-        {filteredBooks.map(book =>
-        <Link to={`/book-isbn/${book.isbn}`} key={book.isbn}>
-          <Book bookDetails={book}/>
-        </Link>)}
-        </div>
+          <div className="bookList">
+            {filteredBooks.map(book =>
+            <Link to={`/book-isbn/${book.isbn}`} key={book.isbn}>
+              <Book bookDetails={book}/>
+            </Link>)}
+          </div>
         </div>
     )
 }

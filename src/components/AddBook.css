@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+
+#header{
+    text-align: center;
+    margin: 18px;
+}
+
+#form-element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-label{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    gap: 10px;
+    width: 50%;
+}
+
+.form-label label{
+    margin-right: 2px;
+}
+
+.form-label input, .form-label textarea{
+    width: 60%;
+    font-size: 1.3rem;   
+}
+
+#form-submit-button{
+    margin: 10px;
+    padding: 13px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#form-submit-button:hover{
+    background-color: antiquewhite;
+}
+
+
