@@ -5,7 +5,7 @@ const bookSlice = createSlice({
     name: "bookRepo",
     initialState: {
         repo: initialBooks, // Populates empty array with existing Bookdata,
-        category: "All"
+        category: "all"
     },
     reducers: {
         add: ( state, action ) => { // ACTION DEFINITION FOR ADDING A BOOK

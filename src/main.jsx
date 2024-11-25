@@ -66,6 +66,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/browse-books",
         element: <BrowseBooks/>
+      },
+      {
+        path: "/browse-books/:category", // Path parameter configured for categorized Books
+        element: <BrowseBooks/>
       }
     ] 
   } 

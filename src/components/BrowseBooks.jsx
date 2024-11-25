@@ -3,14 +3,16 @@ import { useState, useEffect} from "react"
 import { useDispatch, useSelector} from "react-redux"
 import { setCategory } from "../utils/bookSlice"
 import Book from "./Book";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 function BrowseBooks(){
 
     const dispatch = useDispatch();
+    const { category } = useParams();
+    const navigate = useNavigate();
     const selector = useSelector((state) => state.bookRepo.repo); // Picks the array stored in slice
-    const [filteredBooks, setFilteredBooks] = useState(selector); // Sets the filter as per Category
-    const selectedCategory = useSelector( (state) => state.bookRepo.category); // Picks the category
+    const [filteredBooks, setFilteredBooks] = useState(selector);
+    const selectedCategory = category || "all"; // Dynamic routing parameter
 
     const [searchText,setSearchText] = useState(""); // to handle the state of entered Text
 
@@ -18,8 +20,12 @@ function BrowseBooks(){
         let categorized = selector; // Initially default upon no selection of options 
         if(selectedCategory !== 'all') // Incase the category: value in state has changed
             categorized = categorized.filter(book => book.category === selectedCategory);
+
+        if(searchText)
+            categorized = categorized.filter(book => book.title.toLowerCase().includes(searchText.toLowerCase()))
+        
         setFilteredBooks(categorized);
-    },[selector, selectedCategory]); // Booklist will re-render when category is changed again
+    },[selector, selectedCategory, searchText]); // Booklist will re-render when category is changed again
 
     function handleSearchChange(e){
         setSearchText(e.target.value);
@@ -28,6 +34,7 @@ function BrowseBooks(){
 
     function handleCategoryChange(e){
         dispatch(setCategory(e.target.value));
+        navigate(`/browse-books/${e.target.value}`); // Establishing URL parameter based on Category
     }
 
     return(
@@ -35,11 +42,11 @@ function BrowseBooks(){
         <h1>Browse Books by Category</h1>
         <div className="search-panel">
             <div className="search-bar">
-                <input type="text" placeholder="Enter book name" value={searchText}
+                <input type="text" placeholder="Search as you type" value={searchText}
                 onChange={handleSearchChange}/>
             </div>
             <div className="category-filter">
-                <select onChange={handleCategoryChange}>
+                <select value={selectedCategory} onChange={handleCategoryChange}>
                     <option value="all">All Categories</option>
                     <option value="fiction">Fiction</option>
                     <option value="non-fiction">Non-Fiction</option>

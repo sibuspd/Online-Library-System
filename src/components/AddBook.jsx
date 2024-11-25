@@ -11,6 +11,7 @@ function AddBook(){
         isbn: '',
         title: '',
         subtitle: '',
+        category: '',
         author: '',
         publishedDate: '',
         publisher: '',
@@ -24,7 +25,7 @@ function AddBook(){
         e.preventDefault();
         dispatch(add(formData)); // Dispatches action "add" to add a new book to appStore
         console.log("Book Added", formData);
-        setFormData({ isbn: '', title: '', subtitle: '', author: '', publishedDate: '', publisher: '', pages: '', description: '', website: '', image: '' }); // Reset form input boxes
+        setFormData({ isbn: '', title: '', subtitle: '', category:'', author: '', publishedDate: '', publisher: '', pages: '', description: '', website: '', image: '' }); // Reset form input boxes
         alert("Book added successfuly");
     }
 
@@ -48,6 +49,10 @@ function AddBook(){
 
                 <label htmlFor="subtitle" className="form-label">Subtitle :
                     <input type="text" name="subtitle" placeholder="Enter sub-title of Book" value={formData.subtitle} onChange={handleChange}/>
+                </label>
+
+                <label htmlFor="category" className="form-label">Category :
+                    <input type="text" name="category" placeholder="sci-fi/ fiction/ non-fiction/ programming" value={formData.category} onChange={handleChange}/>
                 </label>
 
                 <label htmlFor="author" className="form-label">Author :
