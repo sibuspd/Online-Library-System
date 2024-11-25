@@ -1,19 +1,22 @@
 import PropTypes from "prop-types";
 import Book from "./Book"
 import "./style.css"
-import {Books} from "../utils/bookData"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function BookList(){
 
     const [searchText, setSearchText] = useState("");
-    const [filteredBooks, setFilteredBooks] = useState(Books);
+    const BOOK_REPO = useSelector( (state) => state.bookRepo.repo); // Existing Booklist in Store
+    const [filteredBooks, setFilteredBooks] = useState(BOOK_REPO); 
 
-  
+    useEffect(()=>{setFilteredBooks(BOOK_REPO)},[BOOK_REPO]); // Real-time update of BOOK_REPO in store
+
+
     function handleSearch(){
      const shortlistedBooks = 
-     Books.filter(book => book.title.toLowerCase().includes(searchText.toLowerCase()));
+     BOOK_REPO.filter(book => book.title.toLowerCase().includes(searchText.toLowerCase()));
      console.log(shortlistedBooks);
      setFilteredBooks(shortlistedBooks);
     }
