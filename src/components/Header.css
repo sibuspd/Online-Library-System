@@ -2,7 +2,7 @@ ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 70%;
 }
 
 .header{
@@ -19,6 +19,15 @@ li{
     list-style-type: none;
     margin: 10px;
     font-size: 1.6rem;
+    color: rgb(95, 5, 5);
+    font-weight: 500;
+    padding: 3px;
+}
+
+li:hover{
+    background-color: bisque;
+    border-radius: 150px;
+    scale: 1.1;
 }
 
 #username-box-container{

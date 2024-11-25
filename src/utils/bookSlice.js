@@ -4,7 +4,8 @@ import { Books as initialBooks } from "../utils/bookData"
 const bookSlice = createSlice({
     name: "bookRepo",
     initialState: {
-        repo: initialBooks // Populates empty array with existing Bookdata
+        repo: initialBooks, // Populates empty array with existing Bookdata,
+        category: "All"
     },
     reducers: {
         add: ( state, action ) => { // ACTION DEFINITION FOR ADDING A BOOK
@@ -13,10 +14,13 @@ const bookSlice = createSlice({
         },
         remove: ( state , action) => { // ACTION DEFINITION FOR REMOVING A BOOK
             state.repo = state.repo.filter(book => book.isbn !== action.payload);
+        },
+        setCategory: (state , action ) => {
+            state.category = action.payload;
         } 
     }
 });
 
-export const {add, remove} = bookSlice.actions; // Exporting the Actions of slice
+export const {add, remove, setCategory} = bookSlice.actions; // Exporting the Actions of slice
 export default bookSlice.reducer;
 

@@ -27,6 +27,7 @@ function Header(){
             <ul>
                 <Link to="/2nd_bookList"><li>Extras</li></Link>
                 <Link to="/"><li>Home</li></Link>
+                <Link to="/browse-books"><li>Browse Books</li></Link>
                 <Link to="/about"><li>About</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>
                 <Link to="/add-book"><li>Add Book</li></Link>

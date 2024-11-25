@@ -17,10 +17,12 @@ function App() {
           <userContext.Provider value = {{ username: userName, loginStatus: false, setUserName}}>
             <Header/>
           </userContext.Provider>
-          <Outlet/>
+          <Outlet/> 
           <Footer/>
         </Provider>
     </>
   )
 }
 export default App
+
+// Outlet comprises all Children paths defined under App routes.

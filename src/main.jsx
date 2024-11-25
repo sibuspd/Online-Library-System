@@ -10,6 +10,7 @@ import BookDetail_II from './components/BookDetail_II.jsx'
 import ReadingList from './components/ReadingList.jsx'
 import { lazy, Suspense } from "react"
 import AddBook from './components/AddBook.jsx'
+import BrowseBooks from './components/BrowseBooks.jsx'
 
 const About = lazy(()=>import ("./components/About.jsx"));
 const Contact = lazy(()=>import ("./components/Contact.jsx"));
@@ -61,6 +62,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/add-book",
         element: <AddBook/>
+      },
+      {
+        path: "/browse-books",
+        element: <BrowseBooks/>
       }
     ] 
   } 

@@ -154,7 +154,7 @@ export const Books = [
         image: "https://th.bing.com/th/id/OIP.3YBaTEDl9yVQt3-ZSPZ-7gAAAA?rs=1&pid=ImgDetMain"
     },
     { 
-        isbn: "9780262033848",
+        isbn: "9780262033849",
         title: "Dune",
         subtitle: "A Science Fiction Novel",
         category: "sci-fi",
