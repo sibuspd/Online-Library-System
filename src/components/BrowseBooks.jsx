@@ -40,7 +40,7 @@ function BrowseBooks(){
     return(
         <>
         <h1>Browse Books by Category</h1>
-        <div className="search-panel">
+        <div className="search-PANEL">
             <div className="search-bar">
                 <input type="text" placeholder="Search as you type" value={searchText}
                 onChange={handleSearchChange}/>
