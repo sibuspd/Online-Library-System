@@ -1,0 +1,62 @@
+.git-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a0c0c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    color: #f8f9fa; /* Light color for text visibility */
+}
+
+.git-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.git-card h2 {
+    font-size: 1.8em; /* Larger font size for the name */
+    color: #f8f9fa; /* Light color for text visibility */
+    margin-bottom: 10px;
+}
+
+.git-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 15px rgba(212, 205, 205, 0.3); /* Adds shadow to the avatar */
+}
+
+.git-card h4 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #f8f9fa; /* Light color for text visibility */
+}
+
+.git-details {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.git-details h5, .git-details h6 {
+    margin: 10px 0;
+    color: #f8f9fa; /* Light color for text visibility */
+    font-size: 1.2em; /* Slightly larger font size for better readability */
+}
+
+.git-details a, .git-card a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.git-details a:hover, .git-card a:hover {
+    color: #0056b3;
+}
+
+h4, h5, h6 {
+    font-weight: normal; /* Ensure text is not too bold */
+}

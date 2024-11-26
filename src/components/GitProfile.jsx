@@ -1,4 +1,6 @@
 import useFetch from "../utils/useFetch"
+import "./GitProfile.css"
+import Spinner from "./Spinner";
 
 function GitProfile(){
 
@@ -17,24 +19,29 @@ function GitProfile(){
     if(loading){
         return(
             <>
-                <h5>Loading...... Please wait.</h5>
+                <Spinner/>
             </>
         )
     }
 
     return(
         <>
-            <div>
-                <h5>{data.location}</h5>
-                <h6>Mail me at - sibuspd@gmail.com</h6>
-                <h5>You can find my project at:</h5>
-                <h5>{data.repos_url}</h5>
+            <div className="git-profile">
+                <div className="git-details">   
+                    <h5>{data.location}</h5>
+                    <h6>Mail me at - sibuspd@gmail.com</h6>
+                    <h5>You can find my project at:</h5>
+                    <a href={data.repos_url} target="_blank" rel="noopener noreferrer">https://github.com/sibuspd?tab=repositories</a>
+                </div>
                 
-            </div>
-            <div>
-                <h2>{data.name}</h2>
-                <img src={data.avatar_url} width="250px" height="250px"/>
-                <h4>{data.html_url}</h4>
+                <div className="git-card">
+                    <h2>{data.name}</h2>
+                    <img src={data.avatar_url} width="250px" height="250px"/>
+                    <h4>
+                    <a href={data.html_url} target="_blank" rel="noopener noreferrer">{data.html_url}</a>
+                    </h4>
+                    
+                </div>
             </div>
         </>
     )

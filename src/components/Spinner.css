@@ -1,0 +1,12 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    background-color: rgba(255, 255, 255, 0.8); /* Slight white background */
+    position: fixed; /* Fixed position to cover the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it appears above other content */
+}
