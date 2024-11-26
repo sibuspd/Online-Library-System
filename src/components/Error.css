@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.error-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: whitesmoke;
+    align-items: center;
+    gap: 50px;
+    background-color: black;
+}
+
+#redirect-button{
+    padding: 17px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#redirect-button:hover{
+    background-color: gray;
+    color: whitesmoke;
+}
