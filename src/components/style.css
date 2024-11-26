@@ -187,3 +187,9 @@ body{
 #back-to-browse-button:hover{
     background-color: lightcoral;
 }
+
+.book-rating{
+    margin: 12px;
+    text-align: end;
+    font-size: 2rem;
+}

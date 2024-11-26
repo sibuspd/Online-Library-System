@@ -43,6 +43,7 @@ function BookDetail(){
                                 <h4>{bookObject.publishedDate}</h4>
                                 <h3>{bookObject.publisher}</h3>
                                 <p className="book-text">{bookObject.description}</p>
+                                <p className="book-rating">Rating: <b>{bookObject.rating || "Not rated yet"}</b> ⭐</p>
                                 <div className="cartButtons-container"> 
                                 <button className="addCartButton" onClick={() => handleAddBook(bookObject)}>Add to Reading List </button>
                                 <button className="deleteCartButton" onClick={() => handleRemoveBook(bookObject)}>Remove the Book </button>

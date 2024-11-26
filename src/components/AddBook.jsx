@@ -2,12 +2,14 @@ import "./AddBook.css"
 import { useState } from "react"
 import { add } from "../utils/bookSlice"
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
 function AddBook(){
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({ // Ensures form remains blank initially
         isbn: '',
         title: '',
         subtitle: '',
@@ -21,12 +23,27 @@ function AddBook(){
         image: ''
     });
 
+    function validateForm(){ // For ensuring all book details filled are valid
+        if(!formData.isbn || isNaN(formData.isbn)) return false;
+        if(!formData.title) return false;
+        if(!formData.subtitle) return false;
+        if (!formData.author) return false;
+        if (!formData.publisher) return false;
+        if (!formData.description) return false;
+        if (!formData.image) return false;
+        return true;
+    }
+
     function handleSubmit(e){
         e.preventDefault();
-        dispatch(add(formData)); // Dispatches action "add" to add a new book to appStore
-        console.log("Book Added", formData);
-        setFormData({ isbn: '', title: '', subtitle: '', category:'', author: '', publishedDate: '', publisher: '', pages: '', description: '', website: '', image: '' }); // Reset form input boxes
-        alert("Book added successfuly");
+        if(validateForm()){
+            dispatch(add(formData)); // Dispatches action "add" to add a new book to appStore
+            console.log("Book Added", formData);
+            setFormData({ isbn: '', title: '', subtitle: '', category:'', author: '', publishedDate: '', publisher: '', pages: '', description: '', website: '', image: '' }); // Reset form input boxes
+            alert("Book added successfuly");
+            navigate(`/browse-books/`); // Redirect to Browse books after form submission
+        }
+        else alert("Please fill out all required fields correctly.");
     }
 
     function handleChange(e){
