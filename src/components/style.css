@@ -10,7 +10,7 @@ body{
 }
 
 .book-card{
-    width: 350px;
+    max-width: 350px;
     background-color: #f1e1e1;
     margin: 20px;
     display: flex;
@@ -168,4 +168,22 @@ body{
     background-color: black;
     color: white;
     margin-top: auto;
+}
+
+.left-panel{
+    display: flex;
+    justify-content: left;
+    width: 20%;
+}
+
+#back-to-browse-button{
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#back-to-browse-button:hover{
+    background-color: lightcoral;
 }

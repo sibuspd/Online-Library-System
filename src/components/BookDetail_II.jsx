@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./style.css"
 import { useDispatch } from "react-redux";
 import { addItem, removeItem } from "../utils/cartSlice";
+import { Link } from "react-router-dom";
 
 function BookDetail_II(){
     
@@ -38,6 +39,11 @@ function BookDetail_II(){
                 return(
                     <>
                         <div className="individual-book">
+                        <div className="left-panel">
+                                <Link to="/browse-books">
+                                    <button id="back-to-browse-button">Back to Browse</button>
+                                </Link>
+                            </div>
                             <div className="book-image">
                             <img src={bookObject.image} width="200px" height="200px" />
                             </div>

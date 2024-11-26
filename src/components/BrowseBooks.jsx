@@ -22,7 +22,9 @@ function BrowseBooks(){
             categorized = categorized.filter(book => book.category === selectedCategory);
 
         if(searchText)
-            categorized = categorized.filter(book => book.title.toLowerCase().includes(searchText.toLowerCase()))
+            categorized = categorized.filter(book => 
+                book.title.toLowerCase().includes(searchText.toLowerCase())|| // By Title
+                book.author.toLowerCase().includes(searchText.toLowerCase())); // By Author
         
         setFilteredBooks(categorized);
     },[selector, selectedCategory, searchText]); // Booklist will re-render when category is changed again
