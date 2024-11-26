@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "./style.css"
+import { Link } from "react-router-dom";
 
 function BookII(props){
     let bookProfile = props.bookDetails;
@@ -11,6 +12,9 @@ function BookII(props){
                 <h2 className="book-title">{bookProfile.title}</h2>
                 <h2 className="book-subtitle">{bookProfile.subtitle}</h2>
                 <h4 className="book-author">{bookProfile.authors}</h4>
+                <Link to={`/book-id/${bookProfile.id}`}>
+                    <button className="details-button">View Details</button>
+                </Link>
             </div>
         </div>
     )

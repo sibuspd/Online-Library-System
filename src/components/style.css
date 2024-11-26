@@ -22,11 +22,12 @@ body{
     transition: transform 0.8s;
     overflow: hidden;
     height: 600px;
+    flex-grow: 1;
 }
 
 .book-card:hover{
     transform: scale(1.1);
-    cursor: pointer;
+    cursor: auto;
 }
 
 .book-title{
@@ -42,6 +43,8 @@ body{
 
 .book-description{
     font-size: 1.1em;
+    margin-bottom: 12px;
+    flex-grow: 1;
 }
 
 .book-cover{
@@ -51,6 +54,13 @@ body{
 
 .book-details{
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    align-items: center;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .bookList{
@@ -147,4 +157,15 @@ body{
     padding-left: 12px;
     padding-right: 12px;
     cursor: cell;
+}
+
+.details-button{
+    font-size: 1.1rem;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-top: auto;
 }

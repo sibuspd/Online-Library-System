@@ -40,9 +40,8 @@ function BookList(){
 
           <div className="bookList">
             {filteredBooks.map(book =>
-            <Link to={`/book-isbn/${book.isbn}`} key={book.isbn}>
-              <Book bookDetails={book}/>
-            </Link>)}
+              <Book key={book.isbn} bookDetails={book}/>
+            )}
           </div>
         </div>
     )
